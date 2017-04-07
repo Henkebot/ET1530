@@ -1,2 +1,4 @@
 # SocketPrograming
-Python socket programing
+Course Code: ET1530
+Python programming
+
