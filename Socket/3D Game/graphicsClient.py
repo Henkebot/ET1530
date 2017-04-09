@@ -59,12 +59,14 @@ pygame.event.get(); pygame.mouse.get_rel()
 pygame.mouse.set_visible(0); pygame.event.set_grab(1)
 
 cubes = [Cube((0,0,0)), Cube((-2,0,0)), Cube((2,0,0))]
-
+i = 0
 while True:
     # serverstuff
     serverName = "192.168.1.69"
     serverPort = 12000
-
+    
+    
+    
     clientSocket = socket(AF_INET,SOCK_STREAM)
     clientSocket.connect((serverName,serverPort))
     dt = clock.tick()/1000
@@ -120,7 +122,14 @@ while True:
     key = pygame.key.get_pressed()
     cam.update(dt,key)
     sentence = str(cam.pos)
-    clientSocket.send(sentence.encode())
     
+    clientSocket.send(sentence.encode())
+    pos_new = clientSocket.recv(1024).decode().split()
+    
+    x = float(pos_new[0].strip("[,"))
+
+    cubes[0] = Cube((-x,1,1))
+
+
     clientSocket.close()
 

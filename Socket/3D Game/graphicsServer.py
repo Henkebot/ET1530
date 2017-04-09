@@ -31,7 +31,7 @@ while True:
    
     pos = connectionSocket.recv(1024).decode()
 
-    print_at(6,3,("Player is at: " + pos))
+    print_at(1,0,("Player is at: " + pos))
 
 
     connectionSocket.send(pos.encode())
