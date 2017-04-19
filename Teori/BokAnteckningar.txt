@@ -49,3 +49,122 @@ Chapter 1 Computer Networks and the Internet
 	Hosts are sometimes further divided into two categories: [ Clients ] and [ Servers ]. 
 
 	HFC uses a combination of fiber cable and coxial cable. DSL and Ethernet use copper wire. Mobile access networks use the radio spectrum. 
+	[ Physical medium ] can take many shapes and forms and does not have to be of the same type for each transmitter-reciever pair along the path. Examples of physical media include twistead-pair copper wire, coaxial cable, multimode fiber-optic cable. Physical media fall into two categories: [ Guided media ] and [ Unguided media ]. 
+	With guided media, the waves are guided along a solid medium, such as fiber-optic cable, a twisted pair copper wire, or a coaxial cable. 
+	With unguided media, the waves propagate in the atmosphere and in outer space, such as in a wireless LAN or a digital satellite channel. 
+	
+	Twistead-Pair Copper Wire:
+	Least expensive and most commonly used guided transmission medium is twistead-pair copper wire. 
+	[ Unshielded twistead pair (UTP) ] is commonly used for computer networks within a building, that is, for LANs.
+
+	Coaxial Cable:
+	Coaxial cable can be used as a guided [ Shared medium ]. Specifically, a number of end systems can be connected directly to the cable, with each of the end systems receiving whatever is sent by the other end systems. 
+
+	Fiber optics:
+	An optical fiber is a thin, flexible medium that conducts pulses of light, with each pulse representing a bit. 
+
+	Packet switching:
+	In a network application, end systems exchange [ Messages ] with each other. Messages can contain anything the application designer wants. Messages may perform contorl function ( for example the "Hi" messages) or can conatin data. To send a message from a source end system to a destination end system, the source breaks long messages into smaller chunks of data known as [ packets ]. Between source and destination, each packet travels through communication links and [ Packet swithces ( Routers and link-layer switches)]. Packets are transmitted over each communication link a a rate equal to the full transmision rate of the link. 
+	If a source end system or a packet switch is sending a packet of L bits over a link with transmission rate R bits/sec, then the time to transmit the packet is L / R seconds. 
+
+	Store-and-Forward Transmission:
+	Most packet switches use [ Store-and-Forward transmission ] at the inputs to the links. It means that the packet switch must receive the entire packet before it can begin to trasmit the first bit of the packet into outbound link. 
+	Calculation of the time that elapses from when the source begins to send the packet until the destination has received the entire packet.
+	The source begins to trasmit at time 0; at time L/R seconds, the source has transmitted the entire packet, and the entire packet has been received and stored at the router. 
+	At time L/R seconds, since the router has just received the entire packet, it can begin to transmit the packet onto the outbound link towards the destiantion; at time 2L/R. The entire packet has now been recieved by the destination. 
+	The total delay is 2L/R!
+	The formula for the delay is d(end-to-end) = N (L/R) 
+
+	Queuing Delays and Packet Loss
+	Each packet switch has multiple links attached to it. For each attached link, the packet switch has an [ Output buffer (Also called output queue)], which stores packets that the router is about to send into that link. If an arriving packet needs to be transmitted onto a link but finds the link busy with the transmission of another packet, the arriving packet must wait in the output buffer. Thus, in addition to the store-and-forward delays, packets suffer output buffer [ queueing delays ]. Since the amount of buffer space is finite, an arriving packet may find that the buffer is completely full with other packets waiting for transmission. In this case, [ Packet loss ] will occur -- either the arriving packet or one of the already-queued packets will be dropped. 
+
+	Forwarding Tables and Routing Protocols
+	Each router has a [ Forwarding table ] that maps destination addresses to that router's outbound links. When a pakcet arrives at a router, the router examines the address and searches its forwarding table, using this destination address, to find the appropriate outbound link. The router then directs the packet to this outbound link. 
+	The Internet has a number of special [ Routing protocols ] that are used to automatically set the forwarding tables. A routing protocol may, for example, determine the shortest path from each router to each destination and use the shortest path results to configure the forwardning tables in the routers. 
+
+	Circuit switching
+	There are two fundamental approaches to moving data through a network of links and switches: [ Circuit switching ] and [ Packet switching ]. In circuit-switched networks, the resources needed along a path (buffers, link transmission rate) to provide for communication between the end systems are reserved for the duration of the communication session between the end systems. In packet-switched networks, these resources are not reserved. 
+
+	Packet switching Vs. Circuit switching
+	Packet switching is not suitable for real-time services (for example, telephone calls and video conference calls) because of its variable and unpredictable end-to-end delays. 
+	Packet switching pluses:
+	(1) it offers better sharing of transmission capacity than circuit switching.
+	(2) it is simpler, more efficient and less costly to implement than circuit switching. 
+	
+	A Network of Networks
+	
+	Network Structure 1 is to connect all of the ISPS with a single global transit ISP. Later each ISP creates their own global transit ISP this is Network structure 2. Its basically just a network of networks. 
+	To build a network that resembles todays Internet, we must add points of presence (PoPs), multi-homing, peering, and Internet exchange points (IXPs) to the hierarchical Network Structure 3. A PoP is simply a group of one or more routers in the provider's network where customer ISPs can connect into the provider ISP. 
+	Any ISP may choose to multi-home, that is to connect to two or more provider ISPs. Multi-home enabels to continue to send and receive packets into the Internet even if one of its providers has a failure. 
+
+	Overview of Delay in Packet-Switched Networks
+	As a packet travels from one node (host or router) to the subsequent node (host or router) along this path, the packet suffers from several types of delays at each node along the path. The most imprtant of these delays are [ Nodal processing delay, queuing delay, transmisnodal delay and propagation delay]. All of the mentioned accumulate to give a total node delay. 
+		
+	Processing delay
+	The time required to examine the packet's header and determine where to direct the packet is part of the processing delay.
+	
+	Queuing delay
+	At the queue, the packet experiences a queuing delay as it waits to be transmitted onto the link. The length of the queing delay of a specific packet will depend on the number of earlier-arriving packets that are queued and waiting for transmisson on the link. 
+
+	Transmission Delay
+	The length of the packet is L bits. A 100 mbps Ethernet link has a rate R of 100 Mbps. The transmission delay is L/R.
+
+	Propagation Delay
+	The time required to propagate from the beginning of the link to Router B is the propagation delay. That is the speed of the link. Today the speed of a fiber optic or twisted-pair is between 2x10^8 - 3x10^8 meters/se.
+
+	Transmisson Vs Propagation Delay
+	Transmisson is the amount of time required for the router to push out the packet. It is a function of the packet's length and the transmission rate of the link, but has nothing to do with the distance between the two routers. 
+	The propagation delay is the time it takes a bit to propagate from one router to the next. 
+
+	Packet loss
+	When a packet arrives at a full queue, the router will not store the packet and the router will drop that packet. Which means that the packet is lost. 
+
+	Protocols of the various layers are called the [ protocol stack ]. The Internet protocol stack consists of five layers: the physical, link, network, transport and apllication layers. 
+	
+	Application Layer
+	The application layer is where network applications and their application-layer protocols reside. The Internet's application layer includes many protocols, such as the HTTP protocol, SMTP (e-mail), FTP (file transfer). In this layer we also see network functions such as translate a website adress to a 32-bit network adress. Refer to this packet of information at the application layer as a [ Message ].
+
+	Transport Layer
+	In the Internet there are two transport protocols, TCP and UDP. TCP provides a connection-oriented service to its applications. This service includes guaranteed delivery of application-layer messages to the destination and flow control. TCP also breaks long messages into shorter segments and provides a congestion-control mechanism, so that a source throttles its transmission rate when the network is congested. 
+	The UDP protocol provides a connectionless service to its applications. That provides no reliability, no flow control, no congestion control. The book refers to this layer as a [ Segment ].
+	
+	Network Layer
+	
+	 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
