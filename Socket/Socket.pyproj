@@ -22,6 +22,25 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="3D Game\graphicsClient.py" />
+    <Compile Include="3D Game\graphics.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="3D Game\graphicsServer.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BygrenKod\intergral.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BygrenKod\library.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BygrenKod\typeCasting.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BygrenKod\while.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="TCP\TCPClient.py" />
     <Compile Include="TCP\TCPServer.py">
       <SubType>Code</SubType>
@@ -34,6 +53,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="BygrenKod\" />
+    <Folder Include="3D Game\" />
     <Folder Include="UDP\" />
     <Folder Include="TCP\" />
   </ItemGroup>

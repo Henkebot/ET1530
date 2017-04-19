@@ -22,16 +22,16 @@ serverPort = 12000
 serverSocket = socket(AF_INET, SOCK_STREAM)
 serverSocket.bind(("",serverPort))
 
-serverSocket.listen(1)
+serverSocket.listen(2)
 
 print("Server is online")
 
 while True:
     connectionSocket,addr = serverSocket.accept()
    
-    pos = connectionSocket.recv(1024).decode()
+    pos = connectionSocket.recv(2).decode()
 
-    print_at(1,0,("Player is at: " + pos))
+    print_at(1,0,(str(connectionSocket) + " is at: " + pos))
 
 
     connectionSocket.send(pos.encode())
