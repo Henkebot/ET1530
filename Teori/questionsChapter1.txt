@@ -1,5 +1,7 @@
 1.01 Vilken betydelse har Internet
+Internet har en jätte stor betydelse. Allt är nästan kopplat till internet idag. 
 
 1.02 Beskriver "muttrar och bultrar" perspektivet på Internet / vilka enheter består Internet av?
 
+Muttrar och bultrar är enkel hårdvara och softvara komponenter som bygger upp internet. Internet är ett datornätverk som kopplar samman hundratals miljoner av datorer runt om jorden. 
 

@@ -21,21 +21,21 @@ except socket.gaierror:
 
 conn.connect((serverip,serverPort))
 
-print("Socket connected to " + server + " on ip " + serverip)
+print("Socket connected to " + server) 
 
-message = "GET /tictactoe/index.php?board=eeeeeeeee HTTP/1.1\r\nHost: " + server + "\r\n\r\n"
+message = "GET /tictactoe/index.php?board=eeeeeeeee HTTP/1.1\r\nHost: " + server + "\r\nConnection: close\r\n\r\n"
 
 try:
 
     conn.send(message.encode())
 except socket.error:
-    print("Send failed")
+    print("[ 0 ] Send failed")
     sys.exit()
 
-print("Message send successfully")
+print("[ ok ] Message send successfully\r\n")
 
 reply = conn.recv(4096).decode()
 
-print(reply)
+print("Server response\r\n" + reply)
 
 
