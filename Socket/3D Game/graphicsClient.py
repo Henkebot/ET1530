@@ -62,7 +62,7 @@ cubes = [Cube((0,0,0)), Cube((-2,0,0))]
 
 while True:
     # serverstuff
-    serverName = "192.168.1.69"
+    serverName = "193.11.187.227"
     serverPort = 12000
     
     

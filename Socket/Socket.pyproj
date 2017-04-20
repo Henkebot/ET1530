@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>216d2ee6-7eb7-476d-9b05-c6f212f16530</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>TCP\TCPClient.py</StartupFile>
+    <StartupFile>3D Game\graphicsServer.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,23 +22,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="3D Game\graphics.py" />
     <Compile Include="3D Game\graphicsClient.py" />
-    <Compile Include="3D Game\graphics.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="3D Game\graphicsServer.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BygrenKod\intergral.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BygrenKod\library.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BygrenKod\typeCasting.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BygrenKod\while.py">
+    <Compile Include="3D Game\graphicsServer.py" />
+    <Compile Include="BygrenKod\age.py" />
+    <Compile Include="BygrenKod\intergral.py" />
+    <Compile Include="BygrenKod\library.py" />
+    <Compile Include="BygrenKod\typeCasting.py" />
+    <Compile Include="BygrenKod\while.py" />
+    <Compile Include="PythonTest\functions.py">
+
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="TCP\TCPClient.py" />
@@ -53,8 +46,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BygrenKod\" />
     <Folder Include="3D Game\" />
+    <Folder Include="BygrenKod\" />
+    <Folder Include="PythonTest\" />
     <Folder Include="UDP\" />
     <Folder Include="TCP\" />
   </ItemGroup>
