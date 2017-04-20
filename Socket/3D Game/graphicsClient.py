@@ -58,8 +58,8 @@ cam = Cam((0,0,-5))
 pygame.event.get(); pygame.mouse.get_rel()
 pygame.mouse.set_visible(0); pygame.event.set_grab(1)
 
-cubes = [Cube((0,0,0)), Cube((-2,0,0)), Cube((2,0,0))]
-i = 0
+cubes = [Cube((0,0,0)), Cube((-2,0,0))]
+
 while True:
     # serverstuff
     serverName = "193.11.187.227"
@@ -124,7 +124,7 @@ while True:
     sentence = str(cam.pos)
     
     clientSocket.send(sentence.encode())
-    pos_new = clientSocket.recv(1024).decode().split()
+    pos_new = clientSocket.recv(2).decode().split()
     
     x = float(pos_new[0].strip("[,"))
 
