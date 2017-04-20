@@ -7,6 +7,6 @@ Future p2p applications face three major challanges:
 
 
 Definition of Client and server processes:
-In the context of a communication session between a pair of processes, the process that initates the communication (that is, initally contracts the other process at the beginning of the session) is labeled as the clienbt, the process that waits to be contracted to begin the session is the server.
+In the context of a communication session between a pair of processes, the process that initates the communication (that is, initally contracts the other process at the beginning of the session) is labeled as the client, the process that waits to be contracted to begin the session is the server.
 
 

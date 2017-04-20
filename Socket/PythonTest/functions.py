@@ -23,7 +23,7 @@ conn.connect((serverip,serverPort))
 
 print("Socket connected to " + server + " on ip " + serverip)
 
-message = "GET /tictactoe/index.php?board=eeeeeeeee HTTP/1.1\nHost: " + server + "\n\n"
+message = "GET /tictactoe/index.php?board=eeeeeeeee HTTP/1.1\r\nHost: " + server + "\r\n\r\n"
 
 try:
 
@@ -33,9 +33,8 @@ except socket.error:
     sys.exit()
 
 print("Message send successfully")
-reply = conn.recv(4096).decode()
 
-pos = reply.find("<br>")
+reply = conn.recv(4096).decode()
 
 print(reply)
 
