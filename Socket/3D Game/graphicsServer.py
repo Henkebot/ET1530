@@ -26,12 +26,14 @@ serverSocket.listen(1)
 
 print("Server is online")
 
+
 while True:
     connectionSocket,addr = serverSocket.accept()
    
     pos = connectionSocket.recv(1024).decode()
-
-    print_at(1,0,("Player is at: " + pos))
+    
+    print(addr)
+    print_at(2,0,("Player is at: " + pos))
 
 
     connectionSocket.send(pos.encode())
