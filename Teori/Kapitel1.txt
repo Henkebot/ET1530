@@ -129,8 +129,27 @@ Chapter 1 Computer Networks and the Internet
 	The UDP protocol provides a connectionless service to its applications. That provides no reliability, no flow control, no congestion control. The book refers to this layer as a [ Segment ].
 	
 	Network Layer
+	The Internet's network is responsible for moving network-layer packets known as [ Datagrams ] from one host to another. The layer includes the IP Protocol. There is only one IP protocol, and all Internet components that have a network layer must run the IP protocol. Is often refered as the IP layer. 
+
+	Link Layer
+	As mentioned above, the network layer routes a datagram through a series of routers between the source and destination. To move a packet from one node (host or router) to the next node in the route, the network layer relies on the services of the link layer. For example, the network passes the datagram down to the link layer, which delivers the datagram to the next node along the router. The link layer passes the datagram up to the network layer. Refer thist layer as [ Frames ]
 	
-	 
+	Physical layer
+	While the job of the link is to move entire frames from one network element to an adjacent network element, the job of the physical layer is to move the individual bits within the frame from one node to the next. 
+
+	The OSI model
+	Its a seven layer Internet protocol stack. The other 2 are Presentation Layer and Session layer.
+	Presentation layer:
+	The presentation layer provides services that allow communication allpications to interpret the meaning of data exchanged. Such as data compression and data encryption. 
+	Session layer:
+	The session layer provides for delimiting and synchronization of data exchange, including the means to build a checkpointing and recovery scheme. 
+
+	Encapsulation:
+	When a end system want to send a message to another end system, the message will travers through all the layer. Each layer is appending additional inofrmation, so called transport-layer header information. This information will be used by the receiver-side transport layer. The application-layer message and the transport-layer header information together constitute the [ Transport-layer segment ]. The transport-layer segment thus encapsulates the application-layer message. The added information might include information allowing the receiver-side transport layer to deliver the message up to the appropriate application, and error-detection bits that allow the receiver to determine whether bits in the message have been changed in route. 
+	The transport layer then passes the segment to the network layer, which adds network-layer header information such as source and destination end system adresses, creating a [ Network-layer datagram ].
+	The datagram is then passed to the link layer which will add its own link-layer header information and create a [ Link-layer frame ]. At each layer, a packet has two types of fields: header fields and a [ Payload field ]. The payload is typically a packet from the layer above. 
+
+	Stopped after chapter 1.6!
 	
 
 
