@@ -30,10 +30,12 @@
     <Compile Include="BygrenKod\library.py" />
     <Compile Include="BygrenKod\typeCasting.py" />
     <Compile Include="BygrenKod\while.py" />
+    <Compile Include="Labb2\UDPReciever.py" />
+    <Compile Include="Labb2\UDPSender.py" />
     <Compile Include="PythonTest\functions.py">
-
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PythonTest\socketWeb.py" />
     <Compile Include="TCP\TCPClient.py" />
     <Compile Include="TCP\TCPServer.py">
       <SubType>Code</SubType>
@@ -48,6 +50,7 @@
   <ItemGroup>
     <Folder Include="3D Game\" />
     <Folder Include="BygrenKod\" />
+    <Folder Include="Labb2\" />
     <Folder Include="PythonTest\" />
     <Folder Include="UDP\" />
     <Folder Include="TCP\" />
