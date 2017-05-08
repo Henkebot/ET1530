@@ -9,21 +9,34 @@ socket          = socket(AF_INET, SOCK_DGRAM)
 socket.bind(('', my_port))
 
 # Transmisson Variables
-anticipate      = 200
-message_count   = 0
-freq_counter    = 0
 nr_of_loses     = 0
 nr_of_success   = 0
-
-for x in range(0, int(anticipate)):
+expectedMessage = 0
+while(True):
+    
+    # Frequency calculater
+    transmission_timer_start = time.time()
+    
+    # Data collected
     message, sender_adress = socket.recvfrom(2048)
-#    decoded_message = message.decode()
+
+    transmission_timer_end = time.time()
+    
+    fregz = 1 / float(transmission_timer_end - transmission_timer_start)
+    
+    # Decoding counter
     decoded_message = message[0:8]
     integer = int.from_bytes(decoded_message, byteorder='big')
-    print(integer)
-#    decoded_message = decoded_message[0:decoded_message.find(';')]
-#    decoded_message = decoded_message.strip('\\x')
-
     
-#    print(decoded_message)
+    if(integer > expectedMessage):
+        nr_of_loses += 1
+        print('******************PACKET LOSS**************************')
+        print('Expected:\t', expectedMessage, 'Got:\t',integer)
+    elif(integer < expectedMessage):
+        print('******************WRONG ORDER**************************')
+        print('Expected:\t', expectedMessage, 'Got:\t',integer)
 
+    print('Counter: ' , integer, '\tFrequency: ', fregz)
+
+    expectedMessage = integer+1
+    
