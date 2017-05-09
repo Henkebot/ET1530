@@ -33,6 +33,9 @@
     <Compile Include="Labb2\time.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Labb2\timeTest.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Labb2\UDPrec.py">
       <SubType>Code</SubType>
     </Compile>
@@ -48,6 +51,7 @@
     <Compile Include="PythonTest\functions.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PythonTest\socketWeb.py" />
     <Compile Include="TCP\TCPClient.py" />
     <Compile Include="TCP\TCPServer.py">
       <SubType>Code</SubType>
