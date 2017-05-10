@@ -9,7 +9,6 @@ TCP_socket.listen(1)
 
 expected_message = 1
 
-fregz = 0
 print('Ready to recieve')
 connection_socket, addr = TCP_socket.accept()
 while(True):
@@ -21,7 +20,7 @@ while(True):
     transmission_timer_end = time.time()
 
     denominator = float(transmission_timer_end - transmission_timer_start)
-    if(denominator > 0):
+    if (denominator > 0): 
         freqz = 1 / denominator
     else:
         fregz = -1
@@ -35,10 +34,10 @@ while(True):
     if(integer > expected_message or integer < expected_message):
         print('******************WRONG ORDER**************************')
         print('Expected: ', expected_message, '\tGot:',integer, '\tdiff: ',(integer - expected_message) )
-        print('Counter: ' , integer, '\tFrequency: ', fregz)
+        print('Counter: ' , integer, '\tFrequency: ', freqz)
         print('*******************************************************')
     else:
-        print('Counter: ' , integer, '\tFrequency: ', fregz)
+        print('Counter: ' , integer, '\tFrequency: ', freqz)
 
     expected_message = integer+1
 connection_socket.close()
