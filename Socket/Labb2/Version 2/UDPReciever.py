@@ -21,15 +21,18 @@ while(True):
     message, sender_adress = socket.recvfrom(2048)
 
     transmission_timer_end = time.time()
-    
-    fregz = 1 / float(transmission_timer_end - transmission_timer_start)
+    namner = float(transmission_timer_end - transmission_timer_start)
+    if(namner > 0):
+        fregz = 1 / namner
+    else:
+        freqz = 1/0.000001
     
     # Decoding counter
     decoded_message = message[0:8]
     integer = int.from_bytes(decoded_message, byteorder='big')
     
     if(integer > expectedMessage):
-        nr_of_loses += 1
+        nr_of_loses += (integer - expectedMessage) 
         print('******************PACKET LOSS**************************')
         print('Expected:\t', expectedMessage, 'Got:\t',integer)
     elif(integer < expectedMessage):
