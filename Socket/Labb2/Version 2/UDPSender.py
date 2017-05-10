@@ -7,7 +7,7 @@ target_port         = 12000
 socket              = socket(AF_INET,SOCK_DGRAM)
 
 # Message Settings
-frequency           = 50
+frequency           = 10
 message_size        = 95
 message_sent        = 0
 
@@ -18,30 +18,30 @@ unprocessed         = 0
 
 # Program runtime
 current_time        = time.time()
-transmission_time   = 15
+transmission_time   = 5
 start_send_time     = time.time()
 finished_time       = start_send_time + transmission_time
 
 while (current_time < finished_time):
 
     current_time = time.time()
-    unprocessed += (current_time - last_time) / sec_per_send
+
     last_time = current_time
 
-    while(unprocessed > 1):
-        # Convert message to bytes
-        message_sent += 1
-        counter = (message_sent.to_bytes(8, byteorder='big')) 
-        finalMessage = counter + (';').encode() + bytes(message_size)
 
-        # Cosmetic percentage
-        percentage = int((current_time - start_send_time) /(finished_time - start_send_time) * 100)
-        print(str(percentage) , ' %')
-        
-        # Send
-        socket.sendto(finalMessage, (target_ip, target_port))
+    # Convert message to bytes
+    message_sent += 1
+    counter = (message_sent.to_bytes(8, byteorder='big')) 
+    finalMessage = counter + (';').encode() + bytes(message_size)
 
-        unprocessed -= 1
+    # Cosmetic percentage
+    percentage = int((current_time - start_send_time) /(finished_time - start_send_time) * 100)
+    print(str(percentage) , ' %')
+    
+    # Send
+    socket.sendto(finalMessage, (target_ip, target_port))
+
+    unprocessed -= 1
 
 socket.close()
 
