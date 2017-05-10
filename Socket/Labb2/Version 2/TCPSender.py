@@ -8,7 +8,7 @@ TCP_socket      = socket(AF_INET,SOCK_STREAM)
 TCP_socket.connect((target_ip,target_port))
 
 # Message Settings
-frequency           = 50
+frequency           = 500
 message_size        = 95
 message_sent        = 0
 
