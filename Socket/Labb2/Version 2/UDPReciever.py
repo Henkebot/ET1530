@@ -14,15 +14,17 @@ nr_of_success   = 0
 expectedMessage = 1
 
 print('Ready to recieve!')
+
 while(True):
     
-    # Frequency calculater
     transmission_timer_start = time.time()
     
     # Data collected
     message, sender_adress = socket.recvfrom(2048)
-
+    
     transmission_timer_end = time.time()
+
+    # Frequency calculater
     denominator = float(transmission_timer_end - transmission_timer_start)
     if(denominator > 0):
         fregz = 1 / denominator
@@ -33,7 +35,8 @@ while(True):
     decoded_message = message[0:8]
     integer = int.from_bytes(decoded_message, byteorder='big')
     
-    if(integer > expectedMessage):
+    #If there the messages came in the wrong order
+    if(integer > expectedMessage || integer < expectedMessage):
         nr_of_loses += (integer - expectedMessage) 
         print('******************WRONG ORDER**************************')
         print('Expected: ', expectedMessage, '\tGot:',integer, '\tdiff: ',(integer - expectedMessage) )
