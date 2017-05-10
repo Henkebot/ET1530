@@ -1,6 +1,6 @@
 from socket import *
 import time
-import struct
+
 
 # UDP
 my_port         = 12000
@@ -46,4 +46,9 @@ while(True):
         print('Counter: ' , integer, '\tFrequency: ', fregz)
         
     expectedMessage = integer+1
+
+
+
+
+
 
