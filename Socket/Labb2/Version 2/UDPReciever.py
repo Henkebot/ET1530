@@ -36,7 +36,7 @@ while(True):
     integer = int.from_bytes(decoded_message, byteorder='big')
     
     #If there the messages came in the wrong order
-    if(integer > expectedMessage || integer < expectedMessage):
+    if(integer > expectedMessage or integer < expectedMessage):
         nr_of_loses += (integer - expectedMessage) 
         print('******************WRONG ORDER**************************')
         print('Expected: ', expectedMessage, '\tGot:',integer, '\tdiff: ',(integer - expectedMessage) )
