@@ -7,7 +7,7 @@ target_port         = 12000
 socket              = socket(AF_INET,SOCK_DGRAM)
 
 # Message Settings
-frequency           = 10
+frequency           = 50
 message_size        = 95
 message_sent        = 0
 
@@ -28,7 +28,7 @@ while (current_time < finished_time):
     unprocessed += (current_time - last_time) / sec_per_send
     last_time = current_time
 
-    while(unprocessed > 0):
+    while(unprocessed > 1):
         # Convert message to bytes
         message_sent += 1
         counter = (message_sent.to_bytes(8, byteorder='big')) 
