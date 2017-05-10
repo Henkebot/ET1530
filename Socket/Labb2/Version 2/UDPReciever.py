@@ -12,6 +12,8 @@ socket.bind(('', my_port))
 nr_of_loses     = 0
 nr_of_success   = 0
 expectedMessage = 0
+
+print('Ready to recieve!')
 while(True):
     
     # Frequency calculater
