@@ -11,7 +11,7 @@ socket.bind(('', my_port))
 # Transmisson Variables
 nr_of_loses     = 0
 nr_of_success   = 0
-expectedMessage = 0
+expectedMessage = 1
 
 print('Ready to recieve!')
 while(True):
@@ -27,7 +27,7 @@ while(True):
     if(denominator > 0):
         fregz = 1 / denominator
     else:
-        freqz = 1/0.000001
+        freqz = -1
     
     # Decoding counter
     decoded_message = message[0:8]
@@ -35,13 +35,12 @@ while(True):
     
     if(integer > expectedMessage):
         nr_of_loses += (integer - expectedMessage) 
-        print('******************PACKET LOSS**************************')
-        print('Expected:\t', expectedMessage, 'Got:\t',integer)
-    elif(integer < expectedMessage):
         print('******************WRONG ORDER**************************')
-        print('Expected:\t', expectedMessage, 'Got:\t',integer)
-
-    print('Counter: ' , integer, '\tFrequency: ', fregz)
-
+        print('Expected: ', expectedMessage, '\tGot:',integer, '\tdiff: ',(integer - expectedMessage) )
+        print('Counter: ' , integer, '\tFrequency: ', fregz)
+        print('*******************************************************')
+    else:
+        print('Counter: ' , integer, '\tFrequency: ', fregz)
+        
     expectedMessage = integer+1
-    
+
