@@ -23,9 +23,9 @@ while(True):
     message, sender_adress = socket.recvfrom(2048)
 
     transmission_timer_end = time.time()
-    namner = float(transmission_timer_end - transmission_timer_start)
-    if(namner > 0):
-        fregz = 1 / namner
+    denominator = float(transmission_timer_end - transmission_timer_start)
+    if(denominator > 0):
+        fregz = 1 / denominator
     else:
         freqz = 1/0.000001
     
