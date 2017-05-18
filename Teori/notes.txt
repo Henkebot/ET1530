@@ -1,0 +1,8 @@
+The features or services of the network are implemented in distinct "layers". For example, sending '1' and '0' across a wire, fiber, etc. is done by the physical layer.
+Organizing the '1' and '0' into chunks of data and getting them safely to the right place on the the wire is done by the data link layer.
+Passing data chunks over multiple connected networks is done by the network layer.
+Deliverying of the data to the right software application at the destination is done by the transport layer. 
+
+Service Data Unit(SDU) is a unit of data that has been passed down from an OSI layer or sublayer to a lower layer. This unit of data (SDU) has not yet been encapsulated 
+into a protocol data unit(PDU) by the lower layer. That SDU is then encapsulated into the lower layer's PDU and the process continues until reaching the physical layer 
+of the OSI Stack. 
