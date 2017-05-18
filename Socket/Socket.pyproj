@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>216d2ee6-7eb7-476d-9b05-c6f212f16530</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>3D Game\graphicsServer.py</StartupFile>
+    <StartupFile>Labb2\time.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -30,8 +30,24 @@
     <Compile Include="BygrenKod\library.py" />
     <Compile Include="BygrenKod\typeCasting.py" />
     <Compile Include="BygrenKod\while.py" />
-    <Compile Include="Labb2\UDPReciever.py" />
-    <Compile Include="Labb2\UDPSender.py" />
+    <Compile Include="Labb2\time.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Labb2\timeTest.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Labb2\UDPrec.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Labb2\UDPreciever.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Labb2\UDPsend.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Labb2\UDPSender.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PythonTest\functions.py">
       <SubType>Code</SubType>
     </Compile>
